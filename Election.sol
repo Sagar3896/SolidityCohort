@@ -17,24 +17,11 @@ contract Election {
     // Store accounts that have voted
     mapping(address => bool) public voters;
 
-    // Store Candidates;
-
     // Fetch Candidate
     mapping(uint => Candidate) public candidates;
 
     // Store Candidates Count
-    uint public candidatesCount;
-
-    //
-    modifier ownerOnly() {
-    require (msg.sender == owner);
-    _;
-   }
-
-    
-    function election() public {
-        //
-    }
+    uint public candidatesCount;   
 
     function addCandidate(string memory _name) public {
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
